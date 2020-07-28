@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | GemTakeoffs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <div class="login__main">
+        <div class="login__container">
+            <div class="row">
+                <div class="col-md-6 login__img-container">
+                    <div class="login__img-logo">
+                        <img src="http://www.gemtakeoffs.com/uploads/7/5/1/8/7518758/198558.jpg" alt="logo" srcset="">
+                    </div>
+                    <div>
+                        <img src="http://www.gemtakeoffs.com/uploads/7/5/1/8/7518758/1400793845.jpg" alt="img"
+                            srcset="">
+                    </div>
+                    <div>
+                        <a href="./signup.html  " class="login__link">Create an account</a>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <form action="checkUser" method="POST" class="login__form-container">
+                        <h1 class="login__title">Log In</h1>
+                        <div class="login__divider">
+
+                        </div>
+                        <div class="login__input-container">
+                            <i class="fa fa-at icon"></i>
+                            <input required class="login__input-field" type="email" name="email" placeholder="Email"
+                                autocomplete="off">
+                        </div>
+                        <div class="login__input-container">
+                            <i class="fa fa-lock icon"></i>
+                            <input required class="login__input-field" type="password" name="password"
+                                placeholder="Password" autocomplete="off">
+                        </div>
+                        <button class="login__button">Log in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
