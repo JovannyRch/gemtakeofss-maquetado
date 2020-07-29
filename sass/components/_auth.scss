@@ -1,144 +1,137 @@
-
 html {
-    font-size: 10px;
+  font-size: 16px;
+}
+
+body {
+}
+
+.login__ {
+  &msg {
+    font-size: 1.3rem;
+  }
+
+  &main {
     background-color: rgba($color-base, 0.1);
-}
-
-.login__{
-
-    &msg {
-        font-size: 1.8rem;
-    }
-
-    &main{
-        background-color: rgba($color-base, 0.1);
     height: 100vh;
-    }
+  }
 
-    &container{
-        border-radius: 20px;
-        background-color: #FFFFFF;
-        height: 90vh;
-        width: 80vw;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        box-shadow: .2rem .2rem rgba(99, 77, 51, 0.2);
-    }
+  &container {
+    border-radius: 20px;
+    background-color: #ffffff;
+    height: 90vh;
+    width: 80vw;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: 0.1rem 0.1rem rgba(99, 77, 51, 0.2);
+  }
 
-    &form-container{
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: centers;
-        justify-content: center;
-        height: 80vh;
-        border-color: black;
-        border-width: 3px;
+  &form-container {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: centers;
+    justify-content: center;
+    height: 80vh;
+    border-color: black;
+    border-width: 0.3rem;
+  }
+  &title {
+    font-weight: bold;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 0.2rem;
+  }
+  &input-container {
+    display: flex;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  &input-field {
+    border-radius: 0.6rem;
+    width: 50%;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgba($color-base, 0.1);
+    &:focus {
+      outline: none;
+      padding: 0.3rem;
+      border-color: rgba($color-base, 0.4);
     }
-    &title{
-        font-weight: bold;
-        font-size: 4rem;
-        color: black;
-        margin-bottom: 1rem;
+  }
+  &button {
+    background-color: $color-base;
+    color: rgb(255, 255, 255);
+    border-radius: 0.7rem;
+    padding: 0rem 1.2rem;
+    height: 2.5rem;
+    width: 10rem;
+    animation: aparacer 0.3s ease-out;
+    font-size: 1.5rem;
+    border: none;
+    animation-fill-mode: backwards;
+    font-weight: 600;
+    &:hover {
+      transform: translateY(-0.3rem);
+      transform: scale(1.02);
     }
-    &input-container {
-        display: flex;
-        height: 3rem;
-        margin-bottom: 2rem;
+    &:active {
+      transform: translateY(-0.1rem);
+      border: none;
     }
-    &input-field {
+  }
 
-        border-radius: 1rem;
-        width: 50%;
-        outline: 0;
-        border-width: 0 0 2px;
-        border-color: rgba($color-base, 0.1);
-        &:focus {
-            outline: none;
-            padding: 0.3rem;
-            border-color: rgba($color-base, 0.4);
-        }
-    }
-    &button {
-        background-color: $color-base;
-        color: rgb(255, 255, 255);
-        border-radius: 0.7rem;
-        padding: 0.5rem 1.2rem;
-        height: 5rem;
-        width: 12rem;
-        animation: aparacer 0.3s ease-out;
-        font-size: 1.7rem;
-        border: none;
-        animation-fill-mode: backwards;
-        font-weight: 600;
-        &:hover {
-            transform: translateY(-0.3rem);
-            transform: scale(1.02);
-        }        
-        &:active {
-            transform: translateY(-0.1rem);
-            border: none;
-        }
-    }
+  &divider {
+    width: 70%;
+    height: 0.15rem;
+    background-color: #ffa83e59;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+  }
 
-    &divider {
-        width: 70%;
-        height: 0.3rem;
-        background-color: #ffa83e59;
-        margin-bottom: 5rem;
-        border-radius: 10px;
-    }
+  &img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &img-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
-    }
+  &link {
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+    line-height: 4;
+    font-size: 1.3rem;
 
-    &link {
-        text-decoration: none;
-        color: black;
-        text-decoration: underline;
-        line-height: 4;
-        font-size: 1.5rem;
-
-        &:hover {
-            color: $color-base;
-        }
+    &:hover {
+      color: $color-base;
     }
+  }
 
-    &img-logo {
-        margin-bottom: 2rem;
-    }
+  &img-logo {
+    margin-bottom: 1.5rem;
+  }
 }
-
-
-
 
 .icon {
-    margin-right: 2rem;
-    font-size: 2rem;
+  margin-right: 2rem;
+  font-size: 1.3rem;
 }
-
 
 @keyframes aparacer {
-    0% {
-        opacity: 0;
-        transform: translateY(10rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
 
-    90% {
-        opacity: 1;
-        transform: translateY(-1rem);
-    }
+  90% {
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-

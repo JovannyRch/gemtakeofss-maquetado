@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <a class="navbar-brand" href="#">
             <img src="http://www.gemtakeoffs.com/uploads/7/5/1/8/7518758/198558.jpg" height="50" alt="logo">
         </a>
@@ -50,70 +50,88 @@
         </div>
     </nav>
 
-    <div class=" mt-4 home__container" id="app">
-        <h3 class="home__container-title">Project List</h3>
-
-        <table class="table table-striped bg-white ">
-            <thead class="">
-                <th style="width: 3rem;"></th>
-                <th>Project Name</th>
-                <th>
-                    Accions
-                </th>
-            </thead>
-            <tbody>
-                <tr v-for="project in projects">
-                    <td :class="'text-'+getColor(project.status)">
+    <div class="home__container home__column" id="app">
+        <h3 class="home__container-title">Project Details</h3>
+        <br>
+        <div class="float-left">
+            <a class="btn-back" href="index.html">
+                <i class="fas fa-arrow-left mr-1"></i>
+                Back to project list
+            </a>
+        </div>
+        <br>
+        <div>
+            <h3 class="project__name">
+                {{ project.name }}
+            </h3>
+        </div>
+        <div class="project__box-details row">
+            <div class="col-md-6 col-12">
+                <div>
+                    <span class="project__label">Status:</span>
+                    <span :class="'text-'+getColor(project.status)">
                         <i class="fas fa-circle"></i>
-                    </td>
-                    <td>
-                        <a :href="`project-details.html`">{{ project.name }}</a>
-                    </td>
-                    <td>
-                        <i class="fas fa-ellipsis-v"></i>
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </span>
+                    <p class="project__text">
+                        {{ getStatusName(project.status) }}
+                    </p>
+                </div>
+                <div>
+                    <span class="project__label">Description:</span>
+                    <p class="project__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore excepturi, mollitia corrupti
+                        illo deserunt, qui quidem nostrum provident porro eveniet recusandae, minus nam saepe
+                        voluptate odit a consequuntur veritatis expedita.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+
+                <div>
+                    <span class="project__label">Cost:</span>
+
+                    <p class="project__text">
+                        ${{ project.cost }}
+                    </p>
+                </div>
+                <div>
+                    <span class="project__label">Due Date:</span>
+
+                    <p class="project__text">
+                        {{ project.dueDate }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
     </div>
     <script>
         let app = new Vue({
             el: '#app',
             data: {
-                projects: [
-                    {
-                        id: 1,
-                        name: 'Project 1',
-                        status: 0,
-                    },
-                    {
-                        id: 2,
-                        name: 'Project 2',
-                        status: 2,
-                    },
-                    {
-                        id: 3,
-                        name: 'Project 3',
-                        status: 1,
-                    },
-                    {
-                        id: 4,
-                        name: 'Project 4',
-                        status: 2,
-                    },
-                    {
-                        id: 5,
-                        name: 'Project 5',
-                        status: 0,
-                    }
-                ]
+                id_project: "<?=$id?>",
+                project: {
+                    name: "HOGE STREETS APARTMENTS",
+                    status: 2,
+                    dueDate: '07-20-2020 3:00 PM',
+                    cost: 123.12
+                },
             },
             methods: {
                 getColor(status) {
                     if (status == 0) return 'danger';
                     if (status == 1) return 'warning';
                     if (status == 2) return 'success';
+                },
+                getStatusName(status) {
+                    if (status == 0) return 'Cancelled';
+                    if (status == 1) return 'Activate';
+                    if (status == 2) return 'Done';
+
                 }
             }
         });
